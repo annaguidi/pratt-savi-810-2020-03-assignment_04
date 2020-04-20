@@ -5,7 +5,8 @@
 
 ![http://www.pratt.edu/tiny_mce/plugins/imagemanager/files/Light_brown_blue22.jpg](http://www.pratt.edu/tiny_mce/plugins/imagemanager/files/Light_brown_blue22.jpg)
 
-The **purpose of this project** is to have some **well-written** and **well-documented code** in a GitHub repository that illustrates you can write some Python code. This project is for **your** Portfolio, so pick something you are **interested in** or that's **useful** (either in some professional work or automating some task). [Learn how the project is evaluated (rubric)](https://github.com/pratt-savi-810/pratt-savi-810-2020-03-project).
+The **purpose of this project** is to have some **well-written** and **well-documented code** in a GitHub repository that illustrates you can write some Python code. This project is for **your** Portfolio, so pick something you are **interested in** or that's **useful** (either in some professional work or automating some task). [Learn how the project is evaluated (rubric)](https://github.
+com/pratt-savi-810/pratt-savi-810-2020-03-project).
 
 
 #### Project Routes
@@ -37,70 +38,62 @@ Your Assignment 04 Deliverables are listed below:
 
 You should edit the following items in-line and substitute any of the provided text with your response below for your README.md Assignment 04 submission. 
 
-
 ---
 
 ## Executive Summary
 
-A _brief description_ of your final project idea. 
 
-- **Why** are you doing this project? 
-- **How** do you imagine you'll accomplish this project? 
-- Is this a project **Creating a Tool to Automate a Task** or **Performing Data Analysis to Answer a Research Questio**? 
-
-This should be a paragraph or so and provide a _high-level overview_ of your project. Again this is a summary, so think of this as the "Elevator Pitch". 
+I want to visualize an animated time lapse of the movement of taxis (or ambulance vehicles, but I cannot find the data) from February 1st - March 30th, 2020 (and analyze if there is time). I want to determine if there were increased number of drop-offs at hospitals before any social distancing or "shelter in place" measures were put in place.
 
 ## Background
 
-A more **detailed background** of your project, please include any information that would be useful for understanding the context of the project. This can be as long or short as you'd like. 
+Initially the idea behind this project was to analyze whether there were patterns of increased number of emergency dispatches in NYC prior to "shelter in place" or social distancing measures, however, the only dataset I found so far had data up until December 31st, 2019, and I want to look at least 2 months into 2020. I was insipred by this Italian Article I read where a 911 operator said that in the weeks leading to the explosion of coronavirus in Northern Italy, he received a larger number than calls from people feeling sick, but when he flagged this to authorities he was ignored. I wonder what other signals are out there, ambulance dispatches being the most obvious, but taxis maybe being a good proxy as well for people who are not quite as sick. I think it would be interesting to see at what point in time and over what time span we start seeing an uptick or disurption in transportation.
+
 
 ## Resources
-List any possible articles, resources or analysis or anything useful and include links and perhaps annotate a sentence as to the key findings of this resource. Or if you cannot find any resources please mention. 
 
 #### Resources List
 
-* Title A - link - description
-* Title B - link - description 
-* Title C - link - description 
+* Citibike Analysis - https://toddwschneider.com/posts/a-tale-of-twenty-two-million-citi-bikes-analyzing-the-nyc-bike-share-system/ - the key findings are a commuting patter from outer boroughs to Manhattan, but I mainly like this map from a visualization aspect
+* I do not have any other resources at the moment, but I have no doubt that after deciding on this topic I will find many more, I tend to normally have an issue with too many resources rather than too few
  
 ## Input Data 
 
 #### Data Sources List 
 List any possible data including links with any input data sources you'll be using. 
 
-* Data A - link - description
-* Data B - link - description 
-* Data C - link - description 
+* 311 Service Requests - https://data.cityofnewyork.us/Social-Services/311-Service-Requests-from-2010-to-Present/erm2-nwe9 - still need to investigate if this has the data I need
+* (possibly, maybe not necessary) Neighborhood Tabulation Area data from NYC OpenData  
 
 #### Data Wish List
 List and describe any type of data you'd like to include but had difficulty tracking down. 
 
-* Data Wish List Item A - description
-* Data Wish List Item B - description
+* EMS dispatch data for the past 3 months
+* taxi data for months of February or March
+* if all else fails I will do this analysis with citibike data (https://s3.amazonaws.com/tripdata/index.html)
 
 ## Technical Requirements
 
 #### Python Libraries
-List any Python libraries you think you may need. Desribe what you may use them for. 
 
-* Python Library A - description
-* Python Library B - description
-* Python Library C - description
+* geopandas - for data manipulation and some basic plotting maybe
+* plotly/seaborn/matplotlib - maybe, for data analysis and viz
+* Possibly folium?
+* Moving Pandas
+* Maybe need to use paperspace or Google Colab if I need more processing power? (and/or PostGIS)
 
 
 #### Library Wish List
-Also note any libraries or functionality that you may need that you're not sure exists. Try your best to articulate this in words. This will be helpful if I can provide any libraries to suggest for use in the project. 
 
-* Python Library Wish List Item A - description of desired functionality
-* Python Library Wish List Item B - description of desired functionality
+* Mapbox - can this work in python? or is there a mapbox wrapper? I would like the ability to choose my own basemap beyond like 3 or 4 standard templates
+* A library to create and capture gifs??
 
 ## Measuring Success: 
 
 - How will you measure your project's sucess?
-	- Is there some metric you'd hope to generate from your project.  	 
-	- Is there some plot or visualization that will be generated? 
+	- I would like to be able to determine: there was a change of pattern around a certain time, or maybe there wasn't, or it was very subtle  	 
+	- I would love to do an animation with a slider where you can see mobility (potentially of an entity) over time
 
-	- Is some manual task now fully automated? 
 
 ## Project Execution Plan Outline
 Please include a short outline describing the steps you'd imagine going through. 
@@ -108,17 +101,19 @@ Please include a short outline describing the steps you'd imagine going through.
 Could be as simple as;
 
 ```
-- Background Research 
-	- Spend some time researching the topic
+- Background Research + Data Collection
+	- Spend some time researching the topic- determine if dataset is there, look for additional resources
 
-- Data Collection
-	- Spend time collecting and looking for additional data
+- Data Processing
+	- Clean, format & process data
+    
+	 
+- Data Visualization
+ 	- First static, then dynamic as second step? 
+    
 	 
 - Exploratory Data Analysis
  	- Summarize the input data, plot and examine any columns that may be useful. 
-
-- Data Processing
-	- A couple of steps that may be needed to Process your data. 
 
 - Results and Conclusion 
 	- Key findings
